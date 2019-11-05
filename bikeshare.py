@@ -204,11 +204,13 @@ def main():
         city, month, day = get_filters()      
         df = load_data(city, month, day)
         
+        # The following four function calls display the analysis performed on the raw CSV data for the chosen city
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
 
+        # The following block of code displays raw CSV data in groups of 5 lines if prompted by the user
         start_index = 0
         end_index = 4
         while True :            
@@ -227,6 +229,7 @@ def main():
                     start_index += 5
                     end_index += 5
 
+        # The following block refreshes the execution of the program if prompted by the user
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
