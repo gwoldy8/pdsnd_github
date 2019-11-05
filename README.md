@@ -14,5 +14,5 @@ ney_york_city.csv - The CSV data file containing data for the city of New York C
 washington.csv - The CSV data file containing data for the city of Washington D.C.  
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+https://pandas.pydata.org/pandas-docs/stable/index.html - referenced in order to choose appropriate functions to use
 
