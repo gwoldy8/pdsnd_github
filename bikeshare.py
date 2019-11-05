@@ -183,16 +183,18 @@ def user_stats(df):
     print()
 
     # Display counts of gender
-    print(df['Gender'].value_counts().to_frame())
-    print()    
+    if 'Gender' in df.columns:
+        print(df['Gender'].value_counts().to_frame())
+        print()  
 
     # Display earliest, most recent, and most common year of birth
-    earliest_birth_year = int(df["Birth Year"].min())
-    most_recent_birth_year = int(df["Birth Year"].max())
-    most_common_birth_year = int(df["Birth Year"].mode()[0])
-    print("The earliest birth year is " + str(earliest_birth_year)) 
-    print("The most recent birth year is " + str(most_recent_birth_year)) 
-    print("The most common birth year is " + str(most_common_birth_year)) 
+    if 'Birth Year' in df.columns:
+        earliest_birth_year = int(df["Birth Year"].min())
+        most_recent_birth_year = int(df["Birth Year"].max())
+        most_common_birth_year = int(df["Birth Year"].mode()[0])
+        print("The earliest birth year is " + str(earliest_birth_year)) 
+        print("The most recent birth year is " + str(most_recent_birth_year)) 
+        print("The most common birth year is " + str(most_common_birth_year)) 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -206,6 +208,24 @@ def main():
         station_stats(df)
         trip_duration_stats(df)
         user_stats(df)
+
+        start_index = 0
+        end_index = 4
+        while True :            
+            restart = input('\nWould you like to view 5 lines of raw data? Enter yes or no.\n')
+            if restart.lower() != 'yes':
+                break
+            else:               
+                if(end_index >= df.shape[0] - 1):
+                    raw_data = df.loc[start_index:end_index, ] 
+                    print(raw_data, "\n")
+                    print("No more raw data to output")
+                    break
+                else:
+                    raw_data = df.loc[start_index:end_index, ] 
+                    print(raw_data, "\n") 
+                    start_index += 5
+                    end_index += 5
 
         restart = input('\nWould you like to restart? Enter yes or no.\n')
         if restart.lower() != 'yes':
