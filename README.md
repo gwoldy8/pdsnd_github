@@ -8,10 +8,11 @@ US Bikeshare Python Project
 Using python and the Pandas and NumPy packages, this project explores data related to bike share systems for three major cities in the United States—Chicago, New York City, and Washington D.C.
 
 ### Files used
-bikeshare_2.py
-chicago.csv
-ney_york_city.csv
-washington.csv
+bikeshare.py - Python script which performs data analysis on the bikeshare data from the selected CSV file  
+chicago.csv - CSV data file containing bikeshare data for Chicago  
+new_york_city.csv - CSV data file containing bikeshare data for New York City  
+washington.csv - CSV data file containing bikeshare data for Washington D.C.  
+
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
