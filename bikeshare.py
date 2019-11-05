@@ -178,16 +178,16 @@ def user_stats(df):
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
-    # Display counts of user types
+    # Display counts of user types for riders in the selected city
     print(df['User Type'].value_counts().to_frame())
     print()
 
-    # Display counts of gender
+    # Display counts of gender if that category exists in the CSV for the selected city
     if 'Gender' in df.columns:
         print(df['Gender'].value_counts().to_frame())
         print()  
 
-    # Display earliest, most recent, and most common year of birth
+    # Display earliest, most recent, and most common year of birth for riders in the selected city
     if 'Birth Year' in df.columns:
         earliest_birth_year = int(df["Birth Year"].min())
         most_recent_birth_year = int(df["Birth Year"].max())
