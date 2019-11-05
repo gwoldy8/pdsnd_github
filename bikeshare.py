@@ -90,10 +90,12 @@ def load_data(city, month, day):
     # The following line converts the Start time into the date_time format to use special functions later
     df['Start Time'] = pd.to_datetime(df['Start Time'])
 
+    # The following block filters the data if a specific month was selected
     df['month'] = df['Start Time'].dt.month
     if(month != 0):             
         df = df[df['month'] == month]
 
+    # The following block filters the data if a specific day of the week was selected
     df['day'] = df['Start Time'].dt.dayofweek
     if(day != 7):       
         df = df[df['day'] == day]
