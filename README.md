@@ -15,4 +15,5 @@ washington.csv - a CSV data file containing data for the city of Washington D.C.
 
 ### Credits
 https://pandas.pydata.org/pandas-docs/stable/index.html - referenced in order to choose appropriate functions to use
+https://towardsdatascience.com/sql-and-pandas-268f634a4f5d - referenced to compare SQL and Pandas
 
